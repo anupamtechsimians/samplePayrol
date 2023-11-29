@@ -1,0 +1,38 @@
+{
+  "name": "payroll",
+  "version": "1.0.0",
+  "description": "Backend server for automated payroll management and generation",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "anupamtechsimians",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1342.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "formidable": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "html-pdf": "^3.0.1",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2",
+    "mysql2": "^3.4.0",
+    "nodemailer": "^6.9.4",
+    "pdfkit": "^0.14.0",
+    "puppeteer": "^21.5.2",
+    "sequelize": "^6.32.1",
+    "striptags": "^3.2.0",
+    "tmp": "^0.2.1",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0",
+    "xlsx": "^0.18.5",
+    "xlsx-populate": "^1.21.0"
+  }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pay Slip </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1,p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .details-table {
+      width: 100%;
+      margin-bottom: 20px;
+      border-collapse: collapse;
+    }
+    .details-table th,
+    .details-table td {
+      padding: 8px;
+    }
+    .details-table th {
+      text-align: right;
+      white-space: nowrap;
+      padding-right: 10px;
+    }
+    .details-table td {
+      text-align: left;
+    }
+    .table-container {
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      /* border-top-right-radius: 40px; */
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: black;
+      color: white;
+    }
+    
+    .footer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      text-align: right;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+        <h1><%= companyName%></h1>
+        <p>Payment slip for the month of <%= toMonth%></p>
+      </header>
+      <hr>
+  <table class="details-table">
+    <tr>
+      <td style="border: none; ;"><b>Employee Id:</b></td>
+      <td style="border: none;"><%- employee?.employee_id%></td>
+      <td style="border: none;"><b>email:</b></td>
+      <td style="border: none;"><%- employee?.email%></td>
+    </tr>
+    <tr>
+      <td style="border: none;"><b>Name:</b></td>
+      <td style="border: none;"><%- employee?.name %></td>
+      <td style="border: none;"><b>NOD:</b></td>
+      <td style="border: none;"><%= attendence%></td>
+    </tr>
+    <tr>
+        <td style="border: none;"><b>Mode of Pay:</b></td>
+      <td style="border: none;">Online</td>
+      <td style="border: none;"><b>Ac No:</b></td>
+      <td style="border: none;">*******3433</td>
+    </tr>
+    <tr>
+        <td style="border: none; ;"><b>ESI No:</b></td>
+      <td style="border: none;">232323</td>
+      <td style="border: none;"><b>Designation:</b></td>
+      <td style="border: none;"><%- employee?.designation%></td> 
+    </tr>
+    
+  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 60%; color: black;"><b>Earnings</b></th>
+          <th style="width: 40%;color: black;">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < comp.length; i++) { %>
+          <% if (comp[i].type === 'earning' && comp[i].payType=== 'fixed pay') { %>
+            <tr>
+              <td><%= comp[i].name %></td>
+              <td><%= comp[i]?.payAmount? comp[i]?.payAmount.toFixed(2):comp[i]?.payAmount1.toFixed(2) %></td>
+            </tr>
+          <% } %>
+        <% } %>
+        <tr>
+          <% let totalEarnings = 0; %>
+          <% for (var i = 0; i < comp.length; i++) { %>
+            <% if (comp[i].type === 'earning') { %>
+              <% totalEarnings += comp[i].payAmount; %>
+            <% } %>
+          <% } %>
+          <td>Special Allowance</td>
+          <td>
+            <%= specialAllow.toFixed(2) %>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Gross Pay</b></td>
+          <td><b>
+            <%= amount.toFixed(2) %></b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 60%;color: black;"><b>Deductions</b></th>
+          <th style="width: 40%;color: black;">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < comp.length; i++) { %>
+          <% if (comp[i].type === 'deduction'|| comp[i].type === 'Tax') { %>
+            <tr>
+              <td><%= comp[i].name %></td>
+              <td><%= comp[i]?.payAmount.toFixed(2) || comp[i]?.payAmount1.toFixed(2)  %></td>
+            </tr>
+          <% } %>
+        <% } %>
+        <tr>
+          <td><b>Total Deductions</b></td>
+          <td><b>
+            <% let totalDeductions = 0; %>
+            <% for (var i = 0; i < comp.length; i++) { %>
+              <% if (comp[i].type === 'deduction' ||comp[i].type === 'Tax') { %>
+                <% totalDeductions += comp[i].payAmount || 0; %>
+              <% } %>
+            <% } %>
+            <%= totalDeductions.toFixed(2) %></b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    
+    
+    
+  </div>
+  <table class="details-table">
+    <tr>
+      <td style="border: none; ;"><b>Net Pay:</b></td>
+      <td style="border: none;"><%= total %></td>
+      <td style="border: none; ;"><b>Net Pay(in words):</b></td>
+      <td style="border: none;"><%= wordsTotal%></td>
+      
+    </tr>
+  </table>
+  <footer style="text-align: right;margin-top: 100px;">
+    <a>Automated Signatory</a>
+    <br>
+    <a><%= companyName%></a>
+  </footer>
+</body>
+</html>

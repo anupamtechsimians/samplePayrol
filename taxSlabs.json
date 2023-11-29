@@ -1,0 +1,143 @@
+[
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 250001,
+        "slabMaxAmount": 300000,
+        "ageMin":0,
+        "ageMax":59,
+        "tax": 5,
+        "regime":"old",
+        "type":"individuals"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 300001,
+        "slabMaxAmount": 500000,
+        "ageMin":0,
+        "ageMax":59,
+        "tax": 5,
+        "regime":"old",
+        "type":"individuals"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 300001,
+        "slabMaxAmount": 500000,
+        "ageMin":60,
+        "ageMax":79,
+        "tax": 5,
+        "regime":"old",
+        "type":"Resident Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 500001,
+        "slabMaxAmount": 1000000,
+        "ageMin":0,
+        "ageMax":60,
+        "tax": 20,
+        "regime":"individuals",
+        "type":"Resident Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 500001,
+        "slabMaxAmount": 1000000,
+        "ageMin":60,
+        "ageMax":79,
+        "tax": 20,
+        "regime":"old",
+        "type":"Resident Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 500001,
+        "slabMaxAmount": 1000000,
+        "ageMin":80,
+        "ageMax":200,
+        "tax": 20,
+        "regime":"old",
+        "type":"Resident Super Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 1000000,
+        "slabMaxAmount": 100000000,
+        "ageMin":0,
+        "ageMax":60,
+        "tax": 30,
+        "regime":"individuals",
+        "type":"Resident Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 1000000,
+        "slabMaxAmount": 100000000,
+        "ageMin":60,
+        "ageMax":79,
+        "tax": 30,
+        "regime":"old",
+        "type":"Resident Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 1000000,
+        "slabMaxAmount": 100000000,
+        "ageMin":80,
+        "ageMax":200,
+        "tax": 30,
+        "regime":"old",
+        "type":"Resident Super Senior Citizen"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 300001,
+        "slabMaxAmount": 600000,
+        "ageMin":0,
+        "ageMax":200,
+        "tax": 5,
+        "regime":"new",
+        "type":"New Tax Regime"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 600001,
+        "slabMaxAmount": 900000,
+        "ageMin":0,
+        "ageMax":200,
+        "tax": 10,
+        "regime":"new",
+        "type":"New Tax Regime"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 900001,
+        "slabMaxAmount": 1200000,
+        "ageMin":0,
+        "ageMax":200,
+        "tax": 15,
+        "regime":"new",
+        "type":"New Tax Regime"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 1200001,
+        "slabMaxAmount": 1500000,
+        "ageMin":0,
+        "ageMax":200,
+        "tax": 20,
+        "regime":"new",
+        "type":"New Tax Regime"
+    },
+    {
+        "financialYear": "2023-24",
+        "slabMinAmount": 1500001,
+        "slabMaxAmount": 150000000,
+        "ageMin":0,
+        "ageMax":200,
+        "tax": 30,
+        "regime":"new",
+        "type":"New Tax Regime"
+    }
+
+]
